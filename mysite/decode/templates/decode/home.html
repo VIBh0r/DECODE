@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'decode/main.css' %}">
+</head>
+
+<body>
+<div class="box"></div>
+
+  <nav class="navbar">
+        <ul>
+            <span>
+                <li class="nav1"><a href="{% url 'fun' %}">
+                    DECODE
+                </a></li>
+        <li class="nav2" id="nav3"><a href="{% url 'mainhome' %}">HOME</a></li>
+        <li class="nav2"><a href="{% url 'streamlit_g3' %}">LIST</a></li>
+        <li class="nav2"><a href="{% url 'home' %}">GRAPHS</a></li>
+      </span>
+    </ul>
+  </nav>
+  <div class="vd1container">
+    <video id="vd1" src="{% static 'decode/videos/vd1.mp4' %}" autoplay loop muted class="vd1" width="600" style="pointer-events: none;">
+      Your browser does not support the video tag.
+    </video>
+    <div class="heading">
+      <p><span id="aw">Deep Dive In Analysis With</span></p>
+      <span id="text">DECODED GRAPHS</span>
+      <span id="cursor" class="cursor">|</span>
+    </div>
+  </div>
+  <div class="b-container">
+    <button class="b1" onclick="showList('findlist', 'comparelist')">FIND</button>
+    <button class="b2" onclick="showList('comparelist', 'findlist')">COMPARE</button>
+  </div>
+  <ul id="findlist" class="findlist hidden" type="square">
+    <li><a href="{% url 'streamlit_g1' %}">Top 10 Institutes for your fav Branch</a></li>
+    <li><a>Get Premium to unlock more options...</a></li>
+  </ul>
+  <ul id="comparelist" class="comparelist hidden" type="square">
+    <li><a href="{% url 'streamlit_g4' %}">Test the hype of your fav branch</a></li>
+    <li><a>Compare all branches of you fav college</a>
+     <ul>
+      <li><a id="nl1" href="{% url 'streamlit_g5' %}">IITs</a></li>
+      <li><a id="nl2" href="{% url 'streamlit_g6' %}">NITs</a></li>
+      <li><a id="nl3" href="{% url 'streamlit_g7' %}">IIITs</a></li>
+      <li><a id="nl4" href="{% url 'streamlit_g8' %}">GFIs</a></li>
+     </ul>
+    </li>
+  </ul>
+  <div class="initialParagraph">
+    <p>■ The page provides a comprehensive visualization of trends and patterns in seat allocation across various IITs, NITs, and other participating institutions.</p>
+      <img class="p_img" src="{% static 'decode/images/img.png' %}" style="height: 300px;">
+  </div>
+  <div id="initialParagraph2" class="initialParagraph">
+    <p>■ The intuitive design and interactive features of the page ensure a user-friendly experience, enabling aspirants to analyze the data effectively and tailor their choices.</p>
+      <img class="p_img" src="{% static 'decode/images/img_1.png' %}" style="width: 1100px;">
+  </div>
+
+  <script>
+    function showList(showListId, hideListId) {
+      const showList = document.getElementById(showListId);
+      const hideList = document.getElementById(hideListId);
+      const initialParagraphs = document.getElementsByClassName('initialParagraph');
+      showList.classList.remove('hidden');
+      hideList.classList.add('hidden');
+
+      for (let i = 0; i < initialParagraphs.length; i++) {
+        initialParagraphs[i].classList.add('hidden');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const text = document.getElementById('text');
+      const cursor = document.getElementById('cursor');
+      const textContent = text.textContent;
+      text.textContent = '';
+      let index = 0;
+
+      function typeWriter() {
+        if (index < textContent.length) {
+          text.textContent += textContent.charAt(index);
+          index++;
+          setTimeout(typeWriter, 100);
+        } else {
+          cursor.classList.add('hidden');
+          document.getElementById('vd1').style.visibility = 'visible';
+        }
+      }
+
+      setTimeout(typeWriter, 1000);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      const visibilityState = document.visibilityState;
+
+      if (visibilityState === 'visible') {
+        const findList = document.getElementById('findlist');
+        const compareList = document.getElementById('comparelist');
+
+        if (!findList.classList.contains('hidden')) {
+          showList('findlist', 'comparelist');
+        } else if (!compareList.classList.contains('hidden')) {
+          showList('comparelist', 'findlist');
+        }
+      }
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

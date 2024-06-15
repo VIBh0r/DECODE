@@ -1,0 +1,98 @@
+body{
+    background-color: black;
+    font-family: monospace;
+    color: white;
+}
+
+.name{
+    position: relative;
+    top: 190px;
+    text-align: center;
+    justify-items: center;
+    font-size: 190px;
+}
+.by{
+    position: relative;
+    top: 190px;
+    text-align: center;
+    justify-items: center;
+    font-size: 30px;
+}
+ul{
+    display: flex;
+    position: relative;
+    top: 190px;
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+    list-style: none;
+    gap: 30px;
+}
+
+.box {
+    height: 121px;
+    width: 121px;
+    background-color: gray;
+    border-radius: 70px;
+    position: absolute;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.b1{
+    animation: animateX 3s linear infinite, animateY 10s ease-out infinite alternate;
+}
+.b2{
+    animation: animateX 4s linear infinite, animateY 9s ease-out infinite alternate;
+}
+.b3{
+    animation: animateX 5s linear infinite, animateY 8s ease-out infinite alternate;
+}
+.b4{
+    animation: animateX 6s linear infinite, animateY 7s ease-out infinite alternate;
+}
+.b5{
+    animation: animateX 7s linear infinite, animateY 6s ease-out infinite alternate;
+}
+.b6{
+    animation: animateX 8s linear infinite, animateY 5s ease-out infinite alternate;
+}
+.b7{
+    animation: animateX 9s linear infinite, animateY 4s ease-out infinite alternate;
+}
+.b8{
+    animation: animateX 10s linear infinite, animateY 3s ease-out infinite alternate;
+}
+
+
+@keyframes animateX {
+    from{
+        left: 0;
+    }
+    to{
+        left: 100%;
+    }
+}
+
+@keyframes animateY {
+   from{
+        bottom: 0;
+    }
+    to{
+        bottom: 100% ;
+    }
+}
+
+.tip{
+ position: relative;
+ top: 290px;
+ text-align: center;
+}

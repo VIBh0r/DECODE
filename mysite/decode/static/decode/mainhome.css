@@ -1,0 +1,146 @@
+body{
+font-family: monospace;
+}
+
+.navbar a{
+    color:white;
+     text-decoration:none;
+     padding:15px;
+     display:block;
+     text-align:center;
+     display:inline;
+}
+li{
+    display:inline;
+    color: white;
+}
+#nav3{
+    margin-left: 60px;
+}
+
+.nav2{
+  position: relative;
+  top: -40px;
+}
+.nav1 a:hover {
+    background-color: white;
+    color: black;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+.logo{
+  filter: invert(1);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 0px;
+}
+.x{
+  background-color: black;
+}
+.navbar a:hover{
+    color:black;
+}
+#background-video {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 400px;
+    z-index: -1;
+    background: url('assets/videos/first.mp4') no-repeat;
+    background-size: 200px;
+    filter: grayscale(100%);
+}
+#text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    background-color: #8D8D8DAD;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+#background-video {
+    z-index: -1;
+}
+#h1{
+     font-size: 30px ;
+}
+#h2{
+       font-size: 20px ;
+}
+.nav2 {
+    font-size: 20px;
+}
+
+#text-box2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 180%);
+    color: black;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+#josaa{
+    font-size: 30px;
+}
+
+#text-box3 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 220%);
+    color: black;
+    background-color: white;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    z-index: 2;
+}
+
+#headline{
+    font-size: 50px;
+    color: black;
+    background-color: white;
+}
+
+#h_content{
+    font-size: 40px;
+    color: black;
+    background-color: white;
+}
+
+.subfoot{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 1000%);
+    color: white;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    z-index: 2;
+}
+
+.about{
+   color: black;
+   background-color: white;
+   font-size: 20px;
+   padding: 0;
+   margin: 0;
+}
+

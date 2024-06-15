@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contents=" IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decode</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'decode/mainhome.css' %}">
+</head>
+<body class="x">
+     <nav class="navbar">
+    <ul>
+      <span>
+          <li>
+              <a href="{% url 'fun' %}"><img class="logo" src="{% static 'decode/images/logo.png' %}" style="height: 100px;"></a>
+          </li>
+          <li class="nav2">- Nowadays, Decode is preferred above branch vs college</li>
+          <li class="nav2 nav1" id="nav3"><a href="{% url 'mainhome' %}">HOME</a></li>
+          <li class="nav2 nav1"><a href="{% url 'streamlit_g3' %}">LIST</a></li>
+          <li class="nav2 nav1"><a href="{% url 'home' %}">GRAPHS</a></li>
+      </span>
+    </ul>
+  </nav>
+
+    <div id="text-box">
+        <h1 id="h1">Explore JOSAA Trends & Insights</h1>
+        <p id="h2">Get informed for your college admissions!</p>
+    </div>
+
+    <video autoplay muted id="background-video">
+        <source src="{% static 'decode/videos/first.mp4' %}" type="video/mp4">
+    </video>
+
+    <div id="text-box2">
+        <p id="josaa">JOSAA, the Joint Seat Allocation Authority, is your gateway to top engineering colleges in India. But navigating its intricacies can be overwhelming.</p>
+        <h2>Here's where we come in!</h2>
+    </div>
+    <div class="subfoot">DECODE - Navigate JOSAA Like a Pro!</div>
+    <div id="text-box3">
+        <h1 id="headline">Our Features:</h1>
+        <p id="h_content">
+            <b>Simpplified Lists:</b> Utilize deocode's simplified lists powered by previous year data to estimate your potential college and branch allotment.<br>
+            <b>Decoded Graphs:</b> Gain a deeper understanding of JOSAA trends with variety of plotting options.
+        </p>
+        <div class="about">
+        ABOUT US - Click on the website logo | TEAM DECODE
+            </div>
+    </div>
+
+    <script>
+                const video = document.getElementById('background-video');
+
+        document.addEventListener('enterpictureinpicture', (event) => {
+            document.exitPictureInPicture().catch(err => {
+                console.error("Failed to exit Picture-in-Picture mode:", err);
+            });
+        });
+
+        document.addEventListener('leavepictureinpicture', (event) => {
+            console.log("Exited Picture-in-Picture mode");
+        });
+    </script>
+</body>
+</html>
